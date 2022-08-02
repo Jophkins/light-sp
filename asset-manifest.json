@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/light-sp/static/css/main.be7894b7.css",
+    "main.js": "/light-sp/static/js/main.a7ab1cc4.js",
+    "static/js/787.878007fd.chunk.js": "/light-sp/static/js/787.878007fd.chunk.js",
+    "static/media/cartAdded.svg": "/light-sp/static/media/cartAdded.890c21e6e092e231b04d7f8d3b23767a.svg",
+    "static/media/favoritePlus.svg": "/light-sp/static/media/favoritePlus.b7857eaf913ead52541f91647497a501.svg",
+    "static/media/instagram.svg": "/light-sp/static/media/instagram.4d969dd141d389ed7a2fe7584b56d681.svg",
+    "static/media/favoriteChecked.svg": "/light-sp/static/media/favoriteChecked.9b9476985ff38b5fb1aaac6ddcc9946d.svg",
+    "static/media/whatsapp.svg": "/light-sp/static/media/whatsapp.bd02df8e7a5ef128e55bcd2a40a8b4a5.svg",
+    "index.html": "/light-sp/index.html",
+    "static/media/cartPlus.svg": "/light-sp/static/media/cartPlus.b88e94c67ea7ac0cfa69033241c96b8c.svg",
+    "main.be7894b7.css.map": "/light-sp/static/css/main.be7894b7.css.map",
+    "main.a7ab1cc4.js.map": "/light-sp/static/js/main.a7ab1cc4.js.map",
+    "787.878007fd.chunk.js.map": "/light-sp/static/js/787.878007fd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.be7894b7.css",
+    "static/js/main.a7ab1cc4.js"
+  ]
+}

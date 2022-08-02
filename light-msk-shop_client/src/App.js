@@ -16,47 +16,79 @@ function App() {
 
     <div className="wrapper">
 
-      <header className="mainHeader clear">
-        <div className="container mainHeaderContainer">
-          <ul className="mainHeaderTitles">
-            <li>Доставка и оплата</li>
-            <li>О нас</li>
-            <li>Магазины</li>
-            <li>Контакты</li>
-          </ul>
-          <ul className="mainHeaderTitles">
-            <li>Избранное</li>
-            <li>Корзина</li>
-          </ul>
+      <nav className="navbar navbar-expand-md bg-light">
+        <div className="container">
+          <div className="navbar-brand">ЛОГОТИП</div>
+          <button className="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                  aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"/>
+          </button>
+          <div className="navbar-collapse collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav me-auto mb-2 mb-md-0">
+              <li className="nav-item">
+                <div className="nav-link">Магазины</div>
+              </li>
+              <li className="nav-item">
+                <div className="nav-link">О нас</div>
+              </li>
+              <li className="nav-item">
+                <div className="nav-link">Контакты</div>
+              </li>
+            </ul>
+            <ul className="navbar-nav ">
+              <li className="nav-item">
+                <div className="nav-link">Доставка и оплата</div>
+              </li>
+              <li className="nav-item">
+                <div className="nav-link">
+                  <b>+7 (999) 999-99-99</b>
+                </div>
+              </li>
+              <li className="nav-item">
+                <div className="nav-link">
+                  <img width={25} src={instagram} alt=""/>
+                </div>
+              </li>
+              <li className="nav-item">
+                <div className="nav-link">
+                  <img width={25} src={whatsapp} alt=""/>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
-      </header>
+      </nav>
 
-      <div className="secondHeader">
-        <div className="container secondHeaderContainer">
-          <div className="secondHeaderLogo">
-            <img className="img-fluid"
-                 src="https://www.logomaker.com/api/main/images/1j+ojVVCOMkX9Wyrexe4hGfU37Tb+VNUx0jWq2c8MnRfqQ1hhnx00v9i9f08LRUF4lkdxkpWM4NohSV9VIkVhR1g...j2baNUcBTcjkW9HWug="
-                 alt=""/>
-          </div>
-          <div className="secondHeaderContacts">
-            <div className="socials">
-              <img width={40} src={instagram} alt=""/>
-              <img width={40} src={whatsapp} alt=""/>
-            </div>
-            <div className="phone">
-              <b>+9 (999) 999-99-99</b>
-              <p>Без выходных</p>
-            </div>
-          </div>
+      <nav className="navbar sticky-top navbar-expand-md navbar-dark bg-secondary">
+        <div className="container">
+          <ul className="navbar-nav me-5 mb-2 mb-md-0">
+            <li className="nav-item">
+              <div className="nav-link">
+                Избранное
+              </div>
+            </li>
+          </ul>
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <input className="form-control me-2" type="search" placeholder="Поиск" aria-label="Search"/>
+            </li>
+          </ul>
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <div className="nav-link">
+                Корзина
+              </div>
+            </li>
+          </ul>
         </div>
-      </div>
+      </nav>
 
       <div className="content">
         <div className="container">
           <div className="row">
-            <div className="col-3">
-              <div className="sideWrapper clear">
-                <input type="text" placeholder="Поиск"/>
+            <div className="col-12 col-lg-3">
+              <div className="sideWrapper sticky-top clear">
                 <ul className="lamps">
                   <li>Все люстры</li>
                   <li>Бра</li>
@@ -66,7 +98,7 @@ function App() {
                 </ul>
               </div>
             </div>
-            <div className="col-9">
+            <div className="col-12 col-lg-9">
 
               <div className="contentWrapper">
 
@@ -459,7 +491,7 @@ function App() {
       <footer className="footer clear">
         <div className="container footerContainer">
           <div className="row">
-            <div className="col-3">
+            <div className="col-12 col-sm-6 col-md-3 mt-4">
               <div className="title">
                 Наш магазин
               </div>
@@ -470,7 +502,7 @@ function App() {
                 <li>Контакты</li>
               </ul>
             </div>
-            <div className="col-3">
+            <div className="col-12 col-sm-6 col-md-3 mt-4">
               <div className="title">
                 Каталог
               </div>
@@ -482,7 +514,7 @@ function App() {
                 <li>Другие светильники</li>
               </ul>
             </div>
-            <div className="col-3">
+            <div className="col-12 col-sm-6 col-md-3 mt-4">
               <div className="title">
                 Способ оплаты
               </div>
@@ -499,7 +531,7 @@ function App() {
                 </div>
               </div>
             </div>
-            <div className="col-3">
+            <div className="col-12 col-sm-6 col-md-3 mt-4">
               <div className="title">
                 Контакты
               </div>

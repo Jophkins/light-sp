@@ -4,7 +4,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import instagram from './assets/img/instagram.svg';
 import whatsapp from './assets/img/whatsapp.svg';
 import cartPlus from './assets/img/cartPlus.svg';
+import cartAdded from './assets/img/cartAdded.svg';
 import favoritePlus from './assets/img/favoritePlus.svg';
+import favoriteChecked from './assets/img/favoriteChecked.svg';
 import visaLogo from './assets/img/visa.jpg';
 import mcLogo from './assets/img/mastercard.png';
 
@@ -110,15 +112,27 @@ function App() {
 
                 </div>
 
-                <div className="bannersWrapper">
+                <div className="banners">
                   <div className="row">
-                    <div className="col-6">
-                      <img className="img-fluid" src="https://sankt-peterburg.theretro.ru/upload/iblock/ca3/1920s-odeon-glass-fringe-chandelier-s-foto-6.jpg"
+                    <div className="col-6 bannersWrapper">
+                      <img className="img-fluid"
+                           src="https://sankt-peterburg.theretro.ru/upload/iblock/ca3/1920s-odeon-glass-fringe-chandelier-s-foto-6.jpg"
                            alt=""/>
+                      <div className="bannerContent">
+                        <div className="bannerContentTitle">
+                          БАННЕР С ТЕКСТОМ
+                        </div>
+                      </div>
                     </div>
-                    <div className="col-6">
-                      <img className="img-fluid" src="https://avatars.mds.yandex.net/i?id=2a00000179e760755e3a65d07d5b2f5ca9b4-4349183-images-thumbs&n=13&exp=1"
+                    <div className="col-6 bannersWrapper">
+                      <img className="img-fluid"
+                           src="https://avatars.mds.yandex.net/i?id=2a00000179e760755e3a65d07d5b2f5ca9b4-4349183-images-thumbs&n=13&exp=1"
                            alt=""/>
+                      <div className="bannerContent">
+                        <div className="bannerContentTitle">
+                          БАННЕР С ТЕКСТОМ
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -149,6 +163,9 @@ function App() {
                     </div>
                     <div className="col-12 col-md-4 mt-4">
                       <div className="cardItem">
+                        <div className="cartItemFavorite">
+                          <img width={50} src={favoriteChecked} alt="Favorite"/>
+                        </div>
                         <img className="img-fluid"
                              src="https://www.svetodom.ru/published/publicdata/SVETODOMRU/attachments/SC/products_pictures/638012308.jpg"
                              alt=""/>
@@ -158,13 +175,16 @@ function App() {
                             <b>12 999 руб.</b>
                           </div>
                           <button>
-                            <img src={cartPlus} alt="Plus"/>
+                            <img src={cartAdded} alt="Plus"/>
                           </button>
                         </div>
                       </div>
                     </div>
                     <div className="col-12 col-md-4 mt-4">
                       <div className="cardItem">
+                        <div className="cartItemFavorite">
+                          <img width={50} src={favoriteChecked} alt="Favorite"/>
+                        </div>
                         <img className="img-fluid"
                              src="https://www.svetodom.ru/published/publicdata/SVETODOMRU/attachments/SC/products_pictures/638012308.jpg"
                              alt=""/>
@@ -186,6 +206,9 @@ function App() {
                         <div className="cartItemFavorite">
                           <img width={50} src={favoritePlus} alt="Favorite"/>
                         </div>
+                        <div className="cartItemFavorite">
+                          <img width={50} src={favoritePlus} alt="Favorite"/>
+                        </div>
                         <img className="img-fluid"
                              src="https://www.svetodom.ru/published/publicdata/SVETODOMRU/attachments/SC/products_pictures/638012308.jpg"
                              alt=""/>
@@ -202,6 +225,9 @@ function App() {
                     </div>
                     <div className="col-12 col-md-4 mt-4">
                       <div className="cardItem">
+                        <div className="cartItemFavorite">
+                          <img width={50} src={favoritePlus} alt="Favorite"/>
+                        </div>
                         <img className="img-fluid"
                              src="https://www.svetodom.ru/published/publicdata/SVETODOMRU/attachments/SC/products_pictures/638012308.jpg"
                              alt=""/>
@@ -218,6 +244,9 @@ function App() {
                     </div>
                     <div className="col-12 col-md-4 mt-4">
                       <div className="cardItem">
+                        <div className="cartItemFavorite">
+                          <img width={50} src={favoritePlus} alt="Favorite"/>
+                        </div>
                         <img className="img-fluid"
                              src="https://www.svetodom.ru/published/publicdata/SVETODOMRU/attachments/SC/products_pictures/638012308.jpg"
                              alt=""/>
@@ -227,7 +256,7 @@ function App() {
                             <b>12 999 руб.</b>
                           </div>
                           <button>
-                            <img src={cartPlus} alt="Plus"/>
+                            <img src={cartAdded} alt="Plus"/>
                           </button>
                         </div>
                       </div>
@@ -243,6 +272,25 @@ function App() {
                     <div className="col-12 col-md-4 mt-4">
                       <div className="cardItem">
                         <div className="cartItemFavorite">
+                          <img width={50} src={favoriteChecked} alt="Favorite"/>
+                        </div>
+                        <img className="img-fluid"
+                             src="https://colorsvet.ru/images/sale/product/8684_21365-consul-venge.jpg"
+                             alt=""/>
+                        <h5>Люстра 1111/11 White</h5>
+                        <div className="cardItemBottom">
+                          <div>
+                            <b>12 999 руб.</b>
+                          </div>
+                          <button>
+                            <img src={cartPlus} alt="Plus"/>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-12 col-md-4 mt-4">
+                      <div className="cardItem">
+                        <div className="cartItemFavorite">
                           <img width={50} src={favoritePlus} alt="Favorite"/>
                         </div>
                         <img className="img-fluid"
@@ -261,22 +309,9 @@ function App() {
                     </div>
                     <div className="col-12 col-md-4 mt-4">
                       <div className="cardItem">
-                        <img className="img-fluid"
-                             src="https://colorsvet.ru/images/sale/product/8684_21365-consul-venge.jpg"
-                             alt=""/>
-                        <h5>Люстра 1111/11 White</h5>
-                        <div className="cardItemBottom">
-                          <div>
-                            <b>12 999 руб.</b>
-                          </div>
-                          <button>
-                            <img src={cartPlus} alt="Plus"/>
-                          </button>
+                        <div className="cartItemFavorite">
+                          <img width={50} src={favoritePlus} alt="Favorite"/>
                         </div>
-                      </div>
-                    </div>
-                    <div className="col-12 col-md-4 mt-4">
-                      <div className="cardItem">
                         <img className="img-fluid"
                              src="https://colorsvet.ru/images/sale/product/8684_21365-consul-venge.jpg"
                              alt=""/>
@@ -307,13 +342,16 @@ function App() {
                             <b>12 999 руб.</b>
                           </div>
                           <button>
-                            <img src={cartPlus} alt="Plus"/>
+                            <img src={cartAdded} alt="Plus"/>
                           </button>
                         </div>
                       </div>
                     </div>
                     <div className="col-12 col-md-4 mt-4">
                       <div className="cardItem">
+                        <div className="cartItemFavorite">
+                          <img width={50} src={favoritePlus} alt="Favorite"/>
+                        </div>
                         <img className="img-fluid"
                              src="https://colorsvet.ru/images/sale/product/8684_21365-consul-venge.jpg"
                              alt=""/>
@@ -330,6 +368,9 @@ function App() {
                     </div>
                     <div className="col-12 col-md-4 mt-4">
                       <div className="cardItem">
+                        <div className="cartItemFavorite">
+                          <img width={50} src={favoritePlus} alt="Favorite"/>
+                        </div>
                         <img className="img-fluid"
                              src="https://colorsvet.ru/images/sale/product/8684_21365-consul-venge.jpg"
                              alt=""/>
@@ -463,9 +504,16 @@ function App() {
                 Контакты
               </div>
               <div className="footerDesc">
-                +9 (999) 999-99-99
-                light@gmail.com
-                Instagram
+                <div className="footerDescPhone">
+                  +9 (999) 999-99-99
+                </div>
+                <div className="footerDescEmail">
+                  light@gmail.com
+                </div>
+                <div className="footerDescSocials">
+                  Instagram
+                  WhatsApp
+                </div>
               </div>
             </div>
           </div>

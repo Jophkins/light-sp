@@ -94,8 +94,24 @@
     }
   }
 
-  .bannersWrapper {
+  .banners {
     margin-top: 10px;
+
+    .bannersWrapper {
+      position: relative;
+
+      .bannerContent {
+        padding: 10px;
+        position: absolute;
+        top: 40%;
+        left: 20%;
+        color: #ffffff;
+        font-size: 1.5rem;
+        font-weight: 700;
+        background: rgba(0, 0, 0, 0.8);
+        cursor: pointer;
+      }
+    }
   }
 
   .cardWrapper {
@@ -160,6 +176,16 @@
 
   .footerDesc {
     margin-top: 10px;
+
+    .lowDesc {
+      width: 90%;
+    }
+
+    .license {
+      margin: 10px 0;
+      text-decoration: underline;
+      cursor: pointer;
+    }
   }
 }
 

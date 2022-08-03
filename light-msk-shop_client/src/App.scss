@@ -3,7 +3,7 @@
   background-color: #fff;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.04);
   border-radius: 20px;
-  margin: 20px auto;
+  margin: 0;
 }
 
 
@@ -141,6 +141,7 @@
 }
 
 .footer {
+  position: relative;
   padding: 40px;
   height: auto;
   background-color: #000000;

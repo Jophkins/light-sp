@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/light-sp/static/css/main.f0b58fbc.css",
+    "main.css": "/light-sp/static/css/main.67a7b58d.css",
     "main.js": "/light-sp/static/js/main.b00ab52b.js",
     "static/js/787.878007fd.chunk.js": "/light-sp/static/js/787.878007fd.chunk.js",
     "static/media/cartAdded.svg": "/light-sp/static/media/cartAdded.890c21e6e092e231b04d7f8d3b23767a.svg",
@@ -10,12 +10,12 @@
     "static/media/whatsapp.svg": "/light-sp/static/media/whatsapp.bd02df8e7a5ef128e55bcd2a40a8b4a5.svg",
     "index.html": "/light-sp/index.html",
     "static/media/cartPlus.svg": "/light-sp/static/media/cartPlus.b88e94c67ea7ac0cfa69033241c96b8c.svg",
-    "main.f0b58fbc.css.map": "/light-sp/static/css/main.f0b58fbc.css.map",
+    "main.67a7b58d.css.map": "/light-sp/static/css/main.67a7b58d.css.map",
     "main.b00ab52b.js.map": "/light-sp/static/js/main.b00ab52b.js.map",
     "787.878007fd.chunk.js.map": "/light-sp/static/js/787.878007fd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f0b58fbc.css",
+    "static/css/main.67a7b58d.css",
     "static/js/main.b00ab52b.js"
   ]
 }

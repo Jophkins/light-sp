@@ -14,81 +14,11 @@
   }
 }
 
-.secondHeaderContainer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid #c1c1c1;
-
-  .secondHeaderContacts {
-    width: 350px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    img {
-      margin: 0 10px;
-    }
-
-    .phone {
-      position: relative;
-      top: 10px;
-    }
-  }
-}
-
 .content {
   margin-top: 20px;
 
-  .sideWrapper {
-    z-index: 1;
-    height: 300px;
-    top: 70px;
-
-    input {
-      margin-bottom: 10px;
-      width: 100%;
-      padding: 5px;
-      border: none;
-      border-bottom: 1px solid #000000;
-    }
-
-    .lamps {
-      display: flex;
-      flex-direction: column;
-
-      li {
-        margin-top: 2px;
-        padding: 10px;
-        border: 1px solid #000000;
-        cursor: pointer;
-        transition: 0.15s ease-in-out;
-
-        &:hover {
-          color: #ffffff;
-          background-color: #000000;
-        }
-      }
-    }
-  }
-
   .banners {
     margin-top: 10px;
-
-    .bannersWrapper {
-      position: relative;
-
-      .bannerContent {
-        padding: 2%;
-        position: sticky;
-        top: 40%;
-        left: 20%;
-        color: #ffffff;
-
-        font-weight: 700;
-        background: rgba(0, 0, 0, 0.8);
-        cursor: pointer;
-      }
-    }
   }
 
   .cardWrapper {
@@ -97,38 +27,6 @@
     .cardTitle {
       margin: 0;
     }
-
-    .cardItem {
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      padding: 20px;
-      transition: 0.2s ease-in-out;
-
-      .cartItemFavorite {
-        position: absolute;
-        cursor: pointer;
-      }
-
-      h5 {
-        font-size: 16px;
-        font-weight: 400;
-      }
-
-      &:hover {
-        box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
-        transform: translateY(-10px);
-      }
-
-      .cardItemBottom {
-        display: flex;
-        justify-content: space-between;
-
-        button {
-          padding: 0;
-          border: none;
-        }
-      }
-    }
   }
 
   .contentDescription {
@@ -136,33 +34,6 @@
 
     .contentDescriptionText {
       margin: 40px 0;
-    }
-  }
-}
-
-.footer {
-  position: relative;
-  padding: 40px;
-  height: auto;
-  background-color: #000000;
-  color: #ffffff;
-
-  .title {
-    font-size: 22px;
-    color: green;
-  }
-
-  .footerDesc {
-    margin-top: 10px;
-
-    .lowDesc {
-      width: 90%;
-    }
-
-    .license {
-      margin: 10px 0;
-      text-decoration: underline;
-      cursor: pointer;
     }
   }
 }

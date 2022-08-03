@@ -1,0 +1,31 @@
+.cardItem {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  transition: 0.2s ease-in-out;
+
+  &Favorite {
+    position: absolute;
+    cursor: pointer;
+  }
+
+  h5 {
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  &:hover {
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px);
+  }
+
+  &Bottom {
+    display: flex;
+    justify-content: space-between;
+
+    button {
+      padding: 0;
+      border: none;
+    }
+  }
+}

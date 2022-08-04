@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 import instagram from "../../assets/img/instagram.svg";
 import whatsapp from "../../assets/img/whatsapp.svg";
 
@@ -6,7 +7,9 @@ const MainNavbar = () => {
   return (
     <nav className="navbar navbar-expand-md bg-light">
       <div className="container">
-        <div className="navbar-brand">ЛОГОТИП</div>
+        <div className="navbar-brand">
+          <Link to='/'>ЛОГОТИП</Link>
+        </div>
         <button className="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -15,18 +18,26 @@ const MainNavbar = () => {
         <div className="navbar-collapse collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-md-0">
             <li className="nav-item">
-              <div className="nav-link">Магазины</div>
+              <div className="nav-link">
+                <Link to='/shops'>Магазины</Link>
+              </div>
             </li>
             <li className="nav-item">
-              <div className="nav-link">О нас</div>
+              <div className="nav-link">
+                <Link to='/about'>О Нас</Link>
+              </div>
             </li>
             <li className="nav-item">
-              <div className="nav-link">Контакты</div>
+              <div className="nav-link">
+                <Link to='/contacts'>Контакты</Link>
+              </div>
             </li>
           </ul>
           <ul className="navbar-nav ">
             <li className="nav-item">
-              <div className="nav-link">Доставка и оплата</div>
+              <div className="nav-link">
+                <Link to='/delivery'>Доставка и оплата</Link>
+              </div>
             </li>
             <li className="nav-item">
               <div className="nav-link">

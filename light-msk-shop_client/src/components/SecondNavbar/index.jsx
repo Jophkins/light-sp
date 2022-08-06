@@ -2,12 +2,27 @@ import React from 'react';
 
 const SecondNavbar = () => {
   return (
-    <nav className="navbar sticky-top navbar-expand-md navbar-dark bg-secondary">
+    <nav className="navbar sticky-top navbar-expand-md navbar-dark bg-black">
       <div className="container">
         <ul className="navbar-nav me-5 mb-2 mb-md-0">
           <li className="nav-item">
             <div className="nav-link">
-              Избранное
+              Люстры
+            </div>
+          </li>
+          <li className="nav-item">
+            <div className="nav-link">
+              Бра
+            </div>
+          </li>
+          <li className="nav-item">
+            <div className="nav-link">
+              Настольные лампы
+            </div>
+          </li>
+          <li className="nav-item">
+            <div className="nav-link">
+              Торшеры
             </div>
           </li>
         </ul>

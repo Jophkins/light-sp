@@ -5,7 +5,7 @@ import whatsapp from "../../assets/img/whatsapp.svg";
 
 const MainNavbar = () => {
   return (
-    <nav className="navbar navbar-expand-md bg-light">
+    <nav className="navbar navbar-expand-md bg-light clear">
       <div className="container">
         <div className="navbar-brand">
           <Link to='/'>ЛОГОТИП</Link>

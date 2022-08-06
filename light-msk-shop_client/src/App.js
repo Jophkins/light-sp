@@ -34,10 +34,12 @@ function App() {
                 <div className="banners">
                   <div className="row">
                     <div className="col-6">
-                      <Banner imgUrl='https://sankt-peterburg.theretro.ru/upload/iblock/ca3/1920s-odeon-glass-fringe-chandelier-s-foto-6.jpg' />
+                      <Banner
+                        imgUrl='https://sankt-peterburg.theretro.ru/upload/iblock/ca3/1920s-odeon-glass-fringe-chandelier-s-foto-6.jpg'/>
                     </div>
                     <div className="col-6">
-                      <Banner imgUrl='https://avatars.mds.yandex.net/i?id=2a00000179e760755e3a65d07d5b2f5ca9b4-4349183-images-thumbs&n=13&exp=1' />
+                      <Banner
+                        imgUrl='https://avatars.mds.yandex.net/i?id=2a00000179e760755e3a65d07d5b2f5ca9b4-4349183-images-thumbs&n=13&exp=1'/>
                     </div>
                   </div>
                 </div>
@@ -47,18 +49,22 @@ function App() {
                     <h2>Новинки</h2>
                   </div>
                   <div className="row">
-                    <Card imgUrl='https://www.svetodom.ru/published/publicdata/SVETODOMRU/attachments/SC/products_pictures/638012308.jpg'
-                          isFavorite={false} isAddedToCart />
-                    <Card imgUrl='https://www.svetodom.ru/published/publicdata/SVETODOMRU/attachments/SC/products_pictures/638012308.jpg'
-                          isFavorite isAddedToCart={false} />
-                    <Card imgUrl='https://www.svetodom.ru/published/publicdata/SVETODOMRU/attachments/SC/products_pictures/638012308.jpg'
-                          isFavorite={false} isAddedToCart={false} />
-                    <Card imgUrl='https://www.svetodom.ru/published/publicdata/SVETODOMRU/attachments/SC/products_pictures/638012308.jpg'
-                          isFavorite isAddedToCart={false} />
-                    <Card imgUrl='https://www.svetodom.ru/published/publicdata/SVETODOMRU/attachments/SC/products_pictures/638012308.jpg'
-                          isFavorite={false} isAddedToCart />
-                    <Card imgUrl='https://www.svetodom.ru/published/publicdata/SVETODOMRU/attachments/SC/products_pictures/638012308.jpg'
-                          isFavorite={false} isAddedToCart={false} />
+                    <Card
+                      imgUrl='https://www.svetodom.ru/published/publicdata/SVETODOMRU/attachments/SC/products_pictures/638012308.jpg'/>
+                    <Card
+                      imgUrl='https://www.svetodom.ru/published/publicdata/SVETODOMRU/attachments/SC/products_pictures/638012308.jpg'/>
+                    <Card
+                      imgUrl='https://www.svetodom.ru/published/publicdata/SVETODOMRU/attachments/SC/products_pictures/638012308.jpg'
+                    />
+                    <Card
+                      imgUrl='https://www.svetodom.ru/published/publicdata/SVETODOMRU/attachments/SC/products_pictures/638012308.jpg'
+                    />
+                    <Card
+                      imgUrl='https://www.svetodom.ru/published/publicdata/SVETODOMRU/attachments/SC/products_pictures/638012308.jpg'
+                    />
+                    <Card
+                      imgUrl='https://www.svetodom.ru/published/publicdata/SVETODOMRU/attachments/SC/products_pictures/638012308.jpg'
+                    />
                   </div>
                 </div>
 
@@ -68,17 +74,17 @@ function App() {
                   </div>
                   <div className="row">
                     <Card imgUrl='https://colorsvet.ru/images/sale/product/8684_21365-consul-venge.jpg'
-                          isFavorite={false} isAddedToCart={false} />
+                    />
                     <Card imgUrl='https://colorsvet.ru/images/sale/product/8684_21365-consul-venge.jpg'
-                          isFavorite={false} isAddedToCart={false} />
+                    />
                     <Card imgUrl='https://colorsvet.ru/images/sale/product/8684_21365-consul-venge.jpg'
-                          isFavorite isAddedToCart={false} />
+                    />
                     <Card imgUrl='https://colorsvet.ru/images/sale/product/8684_21365-consul-venge.jpg'
-                          isFavorite={false} isAddedToCart={false} />
+                    />
                     <Card imgUrl='https://colorsvet.ru/images/sale/product/8684_21365-consul-venge.jpg'
-                          isFavorite isAddedToCart />
+                    />
                     <Card imgUrl='https://colorsvet.ru/images/sale/product/8684_21365-consul-venge.jpg'
-                          isFavorite={false} isAddedToCart />
+                    />
                   </div>
                 </div>
 
@@ -150,7 +156,7 @@ function App() {
         </div>
       </div>
 
-      <Footer />
+      <Footer/>
 
     </div>
   );

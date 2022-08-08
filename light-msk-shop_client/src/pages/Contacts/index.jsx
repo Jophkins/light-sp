@@ -1,11 +1,8 @@
 import React from 'react';
-import MainNavbar from "../../components/MainNavbar";
-import Footer from "../../components/Footer";
 
 const Contacts = () => {
   return (
     <div>
-      <MainNavbar />
       <div className="contactsWrapper">
         <div className="container">
           <div className="row">
@@ -20,7 +17,6 @@ const Contacts = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

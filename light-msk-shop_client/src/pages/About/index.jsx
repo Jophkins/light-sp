@@ -1,12 +1,10 @@
 import React from 'react';
-import MainNavbar from "../../components/MainNavbar";
-import Footer from "../../components/Footer";
+
 import styles from "./About.module.scss";
 
 const About = () => {
   return (
     <div>
-      <MainNavbar/>
       <div className={`${styles.aboutWrapper}`}>
         <div className="container">
           <div className="row">
@@ -40,7 +38,6 @@ const About = () => {
           </div>
         </div>
       </div>
-      <Footer/>
     </div>
   );
 };

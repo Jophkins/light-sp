@@ -8,7 +8,7 @@ const MainNavbar = () => {
     <nav className="navbar navbar-expand-md bg-light clear">
       <div className="container">
         <div className="navbar-brand">
-          <Link to='/'>ЛОГОТИП</Link>
+          <Link to='/light-sp'>ЛОГОТИП</Link>
         </div>
         <button className="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -19,24 +19,24 @@ const MainNavbar = () => {
           <ul className="navbar-nav me-auto mb-2 mb-md-0">
             <li className="nav-item">
               <div className="nav-link">
-                <Link to='/shops'>Магазины</Link>
+                <Link to='/light-sp/shops'>Магазины</Link>
               </div>
             </li>
             <li className="nav-item">
               <div className="nav-link">
-                <Link to='/about'>О Нас</Link>
+                <Link to='/light-sp/about'>О Нас</Link>
               </div>
             </li>
             <li className="nav-item">
               <div className="nav-link">
-                <Link to='/contacts'>Контакты</Link>
+                <Link to='/light-sp/contacts'>Контакты</Link>
               </div>
             </li>
           </ul>
           <ul className="navbar-nav ">
             <li className="nav-item">
               <div className="nav-link">
-                <Link to='/delivery'>Доставка и оплата</Link>
+                <Link to='/light-sp/delivery'>Доставка и оплата</Link>
               </div>
             </li>
             <li className="nav-item">

@@ -1,18 +1,15 @@
 import React from 'react';
-import MainNavbar from "../../components/MainNavbar";
-import Footer from "../../components/Footer";
 
 const Shops = () => {
   return (
     <>
-      <MainNavbar/>
       <div className="shopsWrapper">
         <div className="container">
           <div className="row">
             <div className="col-12 p-4">
               <iframe title='yamap'
-                      src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae832ddcc2727a61700f9af8d71153d8e079270e1311808cecb1cb516bc158e8b&amp;source=constructor"
-                      width="1140" height="500" frameBorder="0"></iframe>
+  src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae832ddcc2727a61700f9af8d71153d8e079270e1311808cecb1cb516bc158e8b&amp;source=constructor"
+  width="1140" height="500" frameBorder="0"/>
             </div>
             <div className="col-12">
               <h2>Памятка покупателю</h2>
@@ -38,7 +35,6 @@ const Shops = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

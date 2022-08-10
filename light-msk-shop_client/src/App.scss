@@ -9,8 +9,8 @@
 
 .nav-link {
   cursor: pointer;
-  &:hover{
-    color: #000000;
+  a:hover {
+    color: green;
   }
 }
 

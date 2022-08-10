@@ -3,6 +3,10 @@
   border-radius: 8px;
   padding: 20px;
   transition: 0.2s ease-in-out;
+  
+  img {
+    cursor: pointer;
+  }
 
   &Favorite {
     position: absolute;

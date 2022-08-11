@@ -16,6 +16,7 @@ import Sconce from "./pages/products/Sconce";
 import Lamps from "./pages/products/Lamps";
 import FloorLamps from "./pages/products/FloorLamps";
 import ProductPage from "./pages/ProductPage";
+import CartPage from "./pages/CartPage";
 
 
 function App() {
@@ -37,6 +38,8 @@ function App() {
         <Route path='/light-sp/sconce' element={<Sconce />} />
         <Route path='/light-sp/lamps' element={<Lamps />} />
         <Route path='/light-sp/floor-lamps' element={<FloorLamps />} />
+
+        <Route path='/light-sp/cart' element={<CartPage />} />
 
         <Route path='/light-sp/product-ID' element={<ProductPage />} />
       </Routes>

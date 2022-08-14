@@ -1,17 +1,17 @@
 import React from 'react';
 import styles from './Card.module.scss';
 
-const Card = ({imgUrl}) => {
+const Card = ({title, price, imageUrl}) => {
   return (
     <div className="col-12 col-md-4 mt-4">
       <div className={styles.cardItem}>
         <img className="img-fluid"
-             src={imgUrl}
+             src={imageUrl}
              alt=""/>
-        <h5>Люстра 1111/11 White</h5>
+        <h5>{title}</h5>
         <div className={styles.cardItemBottom}>
           <div>
-            <b>12 999 руб.</b>
+            <b>{price} руб.</b>
           </div>
           <div className={styles.cardItemBottomBtn}>
             <button>

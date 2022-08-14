@@ -6,7 +6,11 @@ import Card from "../../components/Card";
 
 import styles from './MainPage.module.scss';
 
-const MainPage = () => {
+const MainPage = ({ products }) => {
+
+  const allProductsToRender = products.map((item) => {
+    return <Card key={item.id} title={item.title} price={item.price} imageUrl={item.imageUrl} />
+  });
   return (
     <div className={styles.content}>
       <div className="container">
@@ -38,22 +42,9 @@ const MainPage = () => {
                   <h2>Новинки</h2>
                 </div>
                 <div className="row">
-                  <Card
-                    imgUrl='https://www.svetodom.ru/published/publicdata/SVETODOMRU/attachments/SC/products_pictures/638012308.jpg'/>
-                  <Card
-                    imgUrl='https://www.svetodom.ru/published/publicdata/SVETODOMRU/attachments/SC/products_pictures/638012308.jpg'/>
-                  <Card
-                    imgUrl='https://www.svetodom.ru/published/publicdata/SVETODOMRU/attachments/SC/products_pictures/638012308.jpg'
-                  />
-                  <Card
-                    imgUrl='https://www.svetodom.ru/published/publicdata/SVETODOMRU/attachments/SC/products_pictures/638012308.jpg'
-                  />
-                  <Card
-                    imgUrl='https://www.svetodom.ru/published/publicdata/SVETODOMRU/attachments/SC/products_pictures/638012308.jpg'
-                  />
-                  <Card
-                    imgUrl='https://www.svetodom.ru/published/publicdata/SVETODOMRU/attachments/SC/products_pictures/638012308.jpg'
-                  />
+
+                  {allProductsToRender}
+
                 </div>
               </div>
 

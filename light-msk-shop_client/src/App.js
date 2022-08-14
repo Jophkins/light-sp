@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Route, Routes} from "react-router-dom";
@@ -17,9 +17,23 @@ import Lamps from "./pages/products/Lamps";
 import FloorLamps from "./pages/products/FloorLamps";
 import ProductPage from "./pages/ProductPage";
 import CartPage from "./pages/CartPage";
+import axios from "axios";
 
 
 function App() {
+  const [products, setProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    async function fetchData() {
+      setIsLoading(true);
+      const productsResponse = await axios.get('https://62d66e3751e6e8f06f096028.mockapi.io/favorites');
+      setIsLoading(false);
+      setProducts(productsResponse.data);
+    }
+    fetchData();
+  }, []);
+
   return (
 
     <div className="wrapper">
@@ -27,21 +41,21 @@ function App() {
       <SecondNavbar/>
 
       <Routes>
-        <Route path='/light-sp' element={<MainPage />} />
+        <Route path='/light-sp' element={<MainPage products={products} />}/>
 
-        <Route path='/light-sp/shops' element={<Shops />} />
-        <Route path='/light-sp/about' element={<About />} />
-        <Route path='/light-sp/contacts' element={<Contacts />} />
-        <Route path='/light-sp/delivery' element={<Delivery />} />
+        <Route path='/light-sp/shops' element={<Shops/>}/>
+        <Route path='/light-sp/about' element={<About/>}/>
+        <Route path='/light-sp/contacts' element={<Contacts/>}/>
+        <Route path='/light-sp/delivery' element={<Delivery/>}/>
 
-        <Route path='/light-sp/chandeliers' element={<Chandeliers />} />
-        <Route path='/light-sp/sconce' element={<Sconce />} />
-        <Route path='/light-sp/lamps' element={<Lamps />} />
-        <Route path='/light-sp/floor-lamps' element={<FloorLamps />} />
+        <Route path='/light-sp/chandeliers' element={<Chandeliers/>}/>
+        <Route path='/light-sp/sconce' element={<Sconce/>}/>
+        <Route path='/light-sp/lamps' element={<Lamps/>}/>
+        <Route path='/light-sp/floor-lamps' element={<FloorLamps/>}/>
 
-        <Route path='/light-sp/cart' element={<CartPage />} />
+        <Route path='/light-sp/cart' element={<CartPage/>}/>
 
-        <Route path='/light-sp/product-ID' element={<ProductPage />} />
+        <Route path='/light-sp/product-ID' element={<ProductPage/>}/>
       </Routes>
 
       <Footer/>

@@ -5,12 +5,18 @@ import Banner from "../../components/Banner";
 import Card from "../../components/Card";
 
 import styles from './MainPage.module.scss';
+import {Link} from "react-router-dom";
 
-const MainPage = ({ products }) => {
+const MainPage = ({products}) => {
 
   const allProductsToRender = products.map((item) => {
-    return <Card key={item.id} title={item.title} price={item.price} imageUrl={item.imageUrl} />
-  });
+    return <Card key={item.id} title={item.title} price={item.price} imageUrl={item.imageUrl}/>
+  }).reverse().splice(0, 6);
+
+  const chandeliersToRender = products.filter((item) => item.type === 'chandelier').map((item) => {
+    return <Card key={item.id} title={item.title} price={item.price} imageUrl={item.imageUrl}/>
+  }).reverse().splice(0, 6);
+
   return (
     <div className={styles.content}>
       <div className="container">
@@ -53,18 +59,12 @@ const MainPage = ({ products }) => {
                   <h2>Потолочные люстры</h2>
                 </div>
                 <div className="row">
-                  <Card imgUrl='https://colorsvet.ru/images/sale/product/8684_21365-consul-venge.jpg'
-                  />
-                  <Card imgUrl='https://colorsvet.ru/images/sale/product/8684_21365-consul-venge.jpg'
-                  />
-                  <Card imgUrl='https://colorsvet.ru/images/sale/product/8684_21365-consul-venge.jpg'
-                  />
-                  <Card imgUrl='https://colorsvet.ru/images/sale/product/8684_21365-consul-venge.jpg'
-                  />
-                  <Card imgUrl='https://colorsvet.ru/images/sale/product/8684_21365-consul-venge.jpg'
-                  />
-                  <Card imgUrl='https://colorsvet.ru/images/sale/product/8684_21365-consul-venge.jpg'
-                  />
+
+                  {chandeliersToRender}
+
+                </div>
+                <div className={styles.showOtherBtn}>
+                  <Link to='/light-sp/chandeliers'>Посмотреть все</Link>
                 </div>
               </div>
 

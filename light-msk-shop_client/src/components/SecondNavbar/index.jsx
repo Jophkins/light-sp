@@ -7,12 +7,12 @@ const SecondNavbar = () => {
     <nav className="navbar sticky-top navbar-expand-md bg-light clear m-2 p-2">
       <div className="container">
         <div className="navbar-collapse collapse" id="navbarSupportedContent2">
-          <ul className="navbar-nav me-auto mb-2 mb-md-0">
+          <ul className="navbar-nav me-0 ms-5 mb-2 mb-md-0">
             <li className="nav-item">
-              <input className="form-control me-2" type="search" placeholder="Поиск" aria-label="Search"/>
+              <input className="form-control" type="search" placeholder="Поиск" aria-label="Search"/>
             </li>
           </ul>
-          <ul className="navbar-nav me-auto mb-2 mb-md-0">
+          <ul className="navbar-nav me-auto ms-auto mb-2 mb-md-0">
             <li className="nav-item">
               <div className="nav-link">
                 <Link to='/light-sp'>Главная</Link>
@@ -39,7 +39,7 @@ const SecondNavbar = () => {
               </div>
             </li>
           </ul>
-          <ul className="navbar-nav me-0">
+          <ul className="navbar-nav me-5 ms-0">
             <li className="nav-item">
               <div className="nav-link">
                 <Link to='/light-sp/cart'>

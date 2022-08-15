@@ -38,7 +38,7 @@ const MainNavbar = () => {
               </div>
             </li>
           </ul>
-          <ul className="navbar-nav">
+          <ul className="navbar-nav ms-auto">
             <li className="nav-item">
               <div className="nav-link">
                 <img width={25} src={instagram} alt=""/>

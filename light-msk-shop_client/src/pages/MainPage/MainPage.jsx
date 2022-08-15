@@ -1,11 +1,13 @@
 import React from 'react';
-import Sidebar from "../../components/Sidebar";
+import {Link} from "react-router-dom";
+
 import Slider from "../../components/Slider";
 import Banner from "../../components/Banner";
 import Card from "../../components/Card";
 
+import banner1 from "../../assets/img/banners/banner1.png"
+import banner2 from "../../assets/img/banners/banner2.png"
 import styles from './MainPage.module.scss';
-import {Link} from "react-router-dom";
 
 const MainPage = ({products}) => {
 
@@ -21,24 +23,26 @@ const MainPage = ({products}) => {
     <div className={styles.content}>
       <div className="container">
         <div className="row">
-          <div className="col-12 col-lg-3">
-            <Sidebar/>
+          <div className="col-12">
+            <Slider/>
           </div>
-          <div className="col-12 col-lg-9">
+        </div>
+      </div>
+      <div className="container mt-5">
+        <div className="row">
+          <div className="col-12 col-lg-12">
 
             <div className="contentWrapper">
-
-              <Slider/>
 
               <div className={styles.banners}>
                 <div className="row">
                   <div className="col-6">
                     <Banner
-                      imgUrl='https://sankt-peterburg.theretro.ru/upload/iblock/ca3/1920s-odeon-glass-fringe-chandelier-s-foto-6.jpg'/>
+                      imgUrl={banner1}/>
                   </div>
                   <div className="col-6">
                     <Banner
-                      imgUrl='https://avatars.mds.yandex.net/i?id=2a00000179e760755e3a65d07d5b2f5ca9b4-4349183-images-thumbs&n=13&exp=1'/>
+                      imgUrl={banner2}/>
                   </div>
                 </div>
               </div>

@@ -1,4 +1,7 @@
 import React from 'react';
+import slide1 from '../../assets/img/slider/slide1.png';
+import slide2 from '../../assets/img/slider/slide2.png';
+import slide3 from '../../assets/img/slider/slide3.png';
 
 const Slider = () => {
   return (
@@ -16,17 +19,17 @@ const Slider = () => {
         <div className="carousel-inner">
           <div className="carousel-item active">
             <img
-              src="https://regionsveta.ru/website/img/new/magiya_sveta_2.jpg"
+              src={slide1}
               className="d-block w-100" alt="..."/>
           </div>
           <div className="carousel-item">
             <img
-              src="https://stroom.ru/image/catalog/Blog-stati/new-stroom-blog/italianskie-lustry-iz-italii.jpg"
+              src={slide2}
               className="d-block w-100" alt="..."/>
           </div>
           <div className="carousel-item">
             <img
-              src="https://www.boredpanda.com/blog/wp-content/uploads/2014/07/creative-lamps-chandeliers-fb.jpg"
+              src={slide3}
               className="d-block w-100" alt="..."/>
           </div>
         </div>

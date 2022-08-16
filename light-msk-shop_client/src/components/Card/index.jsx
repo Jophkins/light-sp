@@ -3,7 +3,7 @@ import styles from './Card.module.scss';
 
 const Card = ({title, price, imageUrl}) => {
   return (
-    <div className="col-12 col-md-4 mt-4">
+    <div className="col-12 col-md-3 mt-4">
       <div className={styles.cardItem}>
         <img className="img-fluid"
              src={imageUrl}

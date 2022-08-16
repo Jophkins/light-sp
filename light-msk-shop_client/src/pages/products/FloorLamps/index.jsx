@@ -3,7 +3,12 @@ import Card from "../../../components/Card";
 
 import styles from './Lamps.module.scss';
 
-const FloorLamps = () => {
+const FloorLamps = ({products}) => {
+
+  const floorsToRender = products.filter((item) => item.type === 'floor').map((item) => {
+    return <Card key={item.id} title={item.title} price={item.price} imageUrl={item.imageUrl}/>
+  }).reverse();
+
   return (
     <div className={styles.wrapper}>
       <div className="container">
@@ -11,13 +16,9 @@ const FloorLamps = () => {
           <div className="col-12">
             <h2 className="title text-center">Напольные лампы</h2>
             <div className="row">
-              <Card
-                imgUrl='https://www.svetodom.ru/published/publicdata/SVETODOMRU/attachments/SC/products_pictures/638012308.jpg'/>
-              <Card
-                imgUrl='https://www.svetodom.ru/published/publicdata/SVETODOMRU/attachments/SC/products_pictures/638012308.jpg'/>
-              <Card
-                imgUrl='https://www.svetodom.ru/published/publicdata/SVETODOMRU/attachments/SC/products_pictures/638012308.jpg'
-              />
+
+              {floorsToRender}
+
             </div>
           </div>
         </div>

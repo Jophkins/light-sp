@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './Footer.module.scss';
 import visaLogo from "../../assets/img/visa.jpg";
 import mcLogo from "../../assets/img/mastercard.png";
+import {Link} from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -13,10 +14,18 @@ const Footer = () => {
               Наш магазин
             </div>
             <ul className={styles.footerDesc}>
-              <li>Доставка и оплата</li>
-              <li>О нас</li>
-              <li>Магазины</li>
-              <li>Контакты</li>
+              <li>
+                <Link to='/light-sp/delivery'>Доставка и оплата</Link>
+              </li>
+              <li>
+                <Link to='/light-sp/about'>О Нас</Link>
+              </li>
+              <li>
+                <Link to='/light-sp/shops'>Магазины</Link>
+              </li>
+              <li>
+                <Link to='/light-sp/contacts'>Контакты</Link>
+              </li>
             </ul>
           </div>
           <div className="col-12 col-sm-6 col-md-3 mt-4">
@@ -24,11 +33,18 @@ const Footer = () => {
               Каталог
             </div>
             <ul className={styles.footerDesc}>
-              <li>Все люстры</li>
-              <li>Бра</li>
-              <li>Настольные Лампы</li>
-              <li>Торшеры</li>
-              <li>Другие светильники</li>
+              <li>
+                <Link to='/light-sp/chandeliers'>Люстры</Link>
+              </li>
+              <li>
+                <Link to='/light-sp/sconce'>Бра</Link>
+              </li>
+              <li>
+                <Link to='/light-sp/lamps'>Настольные лампы</Link>
+              </li>
+              <li>
+                <Link to='/light-sp/floor-lamps'>Напольные лампы</Link>
+              </li>
             </ul>
           </div>
           <div className="col-12 col-sm-6 col-md-3 mt-4">
@@ -66,6 +82,9 @@ const Footer = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="rights text-center mt-3">
+        2022-2022
       </div>
     </footer>
   );

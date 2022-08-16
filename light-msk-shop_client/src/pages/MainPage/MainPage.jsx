@@ -13,11 +13,7 @@ const MainPage = ({products}) => {
 
   const allProductsToRender = products.map((item) => {
     return <Card key={item.id} title={item.title} price={item.price} imageUrl={item.imageUrl}/>
-  }).reverse().splice(0, 6);
-
-  const chandeliersToRender = products.filter((item) => item.type === 'chandelier').map((item) => {
-    return <Card key={item.id} title={item.title} price={item.price} imageUrl={item.imageUrl}/>
-  }).reverse().splice(0, 6);
+  }).reverse().splice(0, 8);
 
   return (
     <div className={styles.content}>
@@ -58,18 +54,54 @@ const MainPage = ({products}) => {
                 </div>
               </div>
 
-              <div className={styles.cardWrapper}>
-                <div className={styles.cardTitle}>
-                  <h2>Потолочные люстры</h2>
+              <div className="otherProducts mt-5 mb-5">
+                <hr/>
+                <h2 className="title mb-5">
+                  Другие товары по разделам
+                </h2>
+                <div className="row mb-5">
+                  <div className="col-6 col-md-3 mt-2">
+                      <div className={styles.otherLinks}>
+                        <Link to='/light-sp/chandeliers'>
+                          <img className="img-thumbnail" src="https://www.svetodom.ru/published/publicdata/SVETODOMRU/attachments/SC/products_pictures/FR5011CL-08B.jpg" alt=""/>
+                          <h3 className={styles.otherLinksTitle}>
+                            Люстры
+                          </h3>
+                        </Link>
+                      </div>
+                  </div>
+                  <div className="col-6 col-md-3 mt-2">
+                    <div className={styles.otherLinks}>
+                      <Link to='/light-sp/sconce'>
+                        <img className="img-thumbnail" src="https://www.svetodom.ru/published/publicdata/SVETODOMRU/attachments/SC/products_pictures/A9246AP-2SS.jpg" alt=""/>
+                        <h3 className={styles.otherLinksTitle}>
+                          Бра
+                        </h3>
+                      </Link>
+                    </div>
+                  </div>
+                  <div className="col-6 col-md-3 mt-2">
+                    <div className={styles.otherLinks}>
+                      <Link to='/light-sp/lamps'>
+                        <img className="img-thumbnail" src="https://www.svetodom.ru/published/publicdata/SVETODOMRU/attachments/SC/products_pictures/A6068LT-1WH_8519_med.jpg" alt=""/>
+                        <h3 className={styles.otherLinksTitle}>
+                          Настольные лампы
+                        </h3>
+                      </Link>
+                    </div>
+                  </div>
+                  <div className="col-6 col-md-3 mt-2">
+                    <div className={styles.otherLinks}>
+                      <Link to='/light-sp/floor-lamps'>
+                        <img className="img-thumbnail" src="https://www.svetodom.ru/published/publicdata/SVETODOMRU/attachments/SC/products_pictures/LSP-0332tz.jpg" alt=""/>
+                        <h3 className={styles.otherLinksTitle}>
+                          Торшеры
+                        </h3>
+                      </Link>
+                    </div>
+                  </div>
                 </div>
-                <div className="row">
-
-                  {chandeliersToRender}
-
-                </div>
-                <div className={styles.showOtherBtn}>
-                  <Link to='/light-sp/chandeliers'>Посмотреть все</Link>
-                </div>
+                <hr/>
               </div>
 
               <div className={styles.contentDescription}>

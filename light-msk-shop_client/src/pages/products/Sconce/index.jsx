@@ -3,7 +3,12 @@ import Card from "../../../components/Card";
 
 import styles from './Sconce.module.scss';
 
-const Sconce = () => {
+const Sconce = ({products}) => {
+
+  const sconceToRender = products.filter((item) => item.type === 'sconce').map((item) => {
+    return <Card key={item.id} title={item.title} price={item.price} imageUrl={item.imageUrl}/>
+  }).reverse();
+
   return (
     <div className={styles.wrapper}>
       <div className="container">
@@ -11,13 +16,9 @@ const Sconce = () => {
           <div className="col-12">
             <h2 className="title text-center">Бра</h2>
             <div className="row">
-              <Card
-                imgUrl='https://www.svetodom.ru/published/publicdata/SVETODOMRU/attachments/SC/products_pictures/638012308.jpg'/>
-              <Card
-                imgUrl='https://www.svetodom.ru/published/publicdata/SVETODOMRU/attachments/SC/products_pictures/638012308.jpg'/>
-              <Card
-                imgUrl='https://www.svetodom.ru/published/publicdata/SVETODOMRU/attachments/SC/products_pictures/638012308.jpg'
-              />
+
+              {sconceToRender}
+
             </div>
           </div>
         </div>

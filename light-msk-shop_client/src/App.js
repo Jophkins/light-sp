@@ -48,10 +48,10 @@ function App() {
         <Route path='/light-sp/contacts' element={<Contacts/>}/>
         <Route path='/light-sp/delivery' element={<Delivery/>}/>
 
-        <Route path='/light-sp/chandeliers' element={<Chandeliers/>}/>
-        <Route path='/light-sp/sconce' element={<Sconce/>}/>
-        <Route path='/light-sp/lamps' element={<Lamps/>}/>
-        <Route path='/light-sp/floor-lamps' element={<FloorLamps/>}/>
+        <Route path='/light-sp/chandeliers' element={<Chandeliers products={products}/>}/>
+        <Route path='/light-sp/sconce' element={<Sconce products={products}/>}/>
+        <Route path='/light-sp/lamps' element={<Lamps products={products}/>}/>
+        <Route path='/light-sp/floor-lamps' element={<FloorLamps products={products}/>}/>
 
         <Route path='/light-sp/cart' element={<CartPage/>}/>
 

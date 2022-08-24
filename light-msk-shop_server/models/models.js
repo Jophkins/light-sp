@@ -5,11 +5,12 @@ const Administrator = sequelize.define('administrator', {
   id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
   email: {type: DataTypes.STRING, unique: true},
   password: {type: DataTypes.STRING},
+  role: {type: DataTypes.STRING, defaultValue: "ADMIN"},
 });
 
 const Order = sequelize.define('order', {
   id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-  phone: {type: DataTypes.STRING, allowNull: false},
+  phone: {type: DataTypes.STRING, allowNull: true},
   status: {type: DataTypes.STRING, defaultValue: 'OPEN'},
 });
 
@@ -36,6 +37,9 @@ const ProductInfo = sequelize.define('product_info', {
   title: {type: DataTypes.STRING, allowNull: false},
   description: {type: DataTypes.STRING, allowNull: false},
 });
+
+Administrator.hasMany(Order);
+Order.belongsTo(Administrator);
 
 Order.hasMany(OrderInfo);
 OrderInfo.belongsTo(Order);

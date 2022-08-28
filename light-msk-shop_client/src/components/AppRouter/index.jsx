@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import {Route, Routes} from "react-router-dom";
 import MainPage from "../../pages/MainPage";
 import Shops from "../../pages/Shops";
@@ -12,18 +12,15 @@ import FloorLamps from "../../pages/products/FloorLamps";
 import CartPage from "../../pages/CartPage";
 import ProductPage from "../../pages/ProductPage";
 import Auth from "../../pages/Auth";
-import {Context} from "../../index";
 
 const AppRouter = ({products}) => {
-  const {user} = useContext(Context);
 
-  console.log(user);
   return (
 
     <Routes>
-      <Route path='/light-sp' element={<MainPage products={products} />} exact/>
+      <Route path='/light-sp' element={<MainPage products={products}/>} exact/>
 
-      <Route path='/login' element={<Auth />} exact />
+      <Route path='/light-sp/login' element={<Auth/>} exact/>
 
       <Route path='/light-sp/shops' element={<Shops/>} exact/>
       <Route path='/light-sp/about' element={<About/>} exact/>
@@ -37,9 +34,9 @@ const AppRouter = ({products}) => {
 
       <Route path='/light-sp/cart' element={<CartPage/>} exact/>
 
-      <Route path='/light-sp/product-ID' element={<ProductPage/>} exact/>
+      <Route path='/light-sp/product/:id' element={<ProductPage/>} exact/>
 
-      <Route path="*" element={<MainPage products={products} />} />
+      <Route path="*" element={<MainPage products={products}/>}/>
     </Routes>
   );
 };

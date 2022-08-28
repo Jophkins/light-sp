@@ -3,17 +3,13 @@ import {Link} from "react-router-dom";
 
 import Slider from "../../components/Slider";
 import Banner from "../../components/Banner";
-import Card from "../../components/Card";
 
 import banner1 from "../../assets/img/banners/banner1.png"
 import banner2 from "../../assets/img/banners/banner2.png"
 import styles from './MainPage.module.scss';
+import ProductList from "../../components/ProductList";
 
-const MainPage = ({products}) => {
-
-  const allProductsToRender = products.map((item) => {
-    return <Card key={item.id} title={item.title} price={item.price} imageUrl={item.imageUrl}/>
-  }).reverse().splice(0, 8);
+const Index = ({products}) => {
 
   return (
     <div className={styles.content}>
@@ -49,7 +45,7 @@ const MainPage = ({products}) => {
                 </div>
                 <div className="row">
 
-                  {allProductsToRender}
+                  <ProductList />
 
                 </div>
               </div>
@@ -174,4 +170,4 @@ const MainPage = ({products}) => {
   );
 };
 
-export default MainPage;
+export default Index;

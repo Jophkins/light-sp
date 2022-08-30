@@ -12,6 +12,7 @@ import FloorLamps from "../../pages/products/FloorLamps";
 import CartPage from "../../pages/CartPage";
 import ProductPage from "../../pages/ProductPage";
 import Auth from "../../pages/Auth";
+import AdminPage from "../../pages/AdminPage";
 
 const AppRouter = ({products}) => {
 
@@ -19,6 +20,8 @@ const AppRouter = ({products}) => {
 
     <Routes>
       <Route path='/light-sp' element={<MainPage products={products}/>} exact/>
+
+        <Route path='/light-sp/admin' element={<AdminPage />} />
 
       <Route path='/light-sp/login' element={<Auth/>} exact/>
 

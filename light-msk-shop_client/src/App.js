@@ -288,7 +288,7 @@ const App = observer(() => {
         <MainNavbar/>
         <SecondNavbar/>
 
-        <AppRouter products={products}/>
+        <AppRouter />
 
         <Footer/>
       </div>

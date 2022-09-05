@@ -14,12 +14,12 @@ import ProductPage from "../../pages/ProductPage";
 import Auth from "../../pages/Auth";
 import AdminPage from "../../pages/AdminPage";
 
-const AppRouter = ({products}) => {
+const AppRouter = () => {
 
   return (
 
     <Routes>
-      <Route path='/light-sp' element={<MainPage products={products}/>} exact/>
+      <Route path='/light-sp' element={<MainPage />} exact/>
 
         <Route path='/light-sp/admin' element={<AdminPage />} />
 
@@ -30,16 +30,16 @@ const AppRouter = ({products}) => {
       <Route path='/light-sp/contacts' element={<Contacts/>} exact/>
       <Route path='/light-sp/delivery' element={<Delivery/>} exact/>
 
-      <Route path='/light-sp/chandeliers' element={<Chandeliers products={products}/>} exact/>
-      <Route path='/light-sp/sconce' element={<Sconce products={products}/>} exact/>
-      <Route path='/light-sp/lamps' element={<Lamps products={products}/>} exact/>
-      <Route path='/light-sp/floor-lamps' element={<FloorLamps products={products}/>} exact/>
+      <Route path='/light-sp/chandeliers' element={<Chandeliers />} exact/>
+      <Route path='/light-sp/sconce' element={<Sconce />} exact/>
+      <Route path='/light-sp/lamps' element={<Lamps />} exact/>
+      <Route path='/light-sp/floor-lamps' element={<FloorLamps />} exact/>
 
       <Route path='/light-sp/cart' element={<CartPage/>} exact/>
 
       <Route path='/light-sp/product/:id' element={<ProductPage/>} exact/>
 
-      <Route path="*" element={<MainPage products={products}/>}/>
+      <Route path="*" element={<MainPage />}/>
     </Routes>
   );
 };

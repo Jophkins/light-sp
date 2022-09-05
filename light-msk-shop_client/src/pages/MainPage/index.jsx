@@ -1,5 +1,4 @@
-import React from 'react';
-import {Link} from "react-router-dom";
+import React, {useContext, useEffect} from 'react';
 
 import Slider from "../../components/Slider";
 import Banner from "../../components/Banner";
@@ -8,8 +7,19 @@ import banner1 from "../../assets/img/banners/banner1.png"
 import banner2 from "../../assets/img/banners/banner2.png"
 import styles from './MainPage.module.scss';
 import ProductList from "../../components/ProductList";
+import TypeCard from "../../components/TypeCard";
+import {observer} from "mobx-react-lite";
+import {Context} from "../../index";
+import {fetchProducts, fetchTypes} from "../../http/productAPI";
 
-const Index = ({products}) => {
+const MainPage = observer(() => {
+  const {product} = useContext(Context);
+
+  useEffect(() => {
+    fetchTypes().then(data => product.setTypes(data));
+    fetchProducts().then(data => product.setProducts(data.rows));
+  }, []);
+
 
   return (
     <div className={styles.content}>
@@ -56,46 +66,9 @@ const Index = ({products}) => {
                   Другие товары по разделам
                 </h2>
                 <div className="row mb-5">
-                  <div className="col-6 col-md-3 mt-2">
-                      <div className={styles.otherLinks}>
-                        <Link to='/light-sp/chandeliers'>
-                          <img className="img-thumbnail" src="https://www.svetodom.ru/published/publicdata/SVETODOMRU/attachments/SC/products_pictures/FR5011CL-08B.jpg" alt=""/>
-                          <h3 className={styles.otherLinksTitle}>
-                            Люстры
-                          </h3>
-                        </Link>
-                      </div>
-                  </div>
-                  <div className="col-6 col-md-3 mt-2">
-                    <div className={styles.otherLinks}>
-                      <Link to='/light-sp/sconce'>
-                        <img className="img-thumbnail" src="https://www.svetodom.ru/published/publicdata/SVETODOMRU/attachments/SC/products_pictures/A9246AP-2SS.jpg" alt=""/>
-                        <h3 className={styles.otherLinksTitle}>
-                          Бра
-                        </h3>
-                      </Link>
-                    </div>
-                  </div>
-                  <div className="col-6 col-md-3 mt-2">
-                    <div className={styles.otherLinks}>
-                      <Link to='/light-sp/lamps'>
-                        <img className="img-thumbnail" src="https://www.svetodom.ru/published/publicdata/SVETODOMRU/attachments/SC/products_pictures/A6068LT-1WH_8519_med.jpg" alt=""/>
-                        <h3 className={styles.otherLinksTitle}>
-                          Настольные лампы
-                        </h3>
-                      </Link>
-                    </div>
-                  </div>
-                  <div className="col-6 col-md-3 mt-2">
-                    <div className={styles.otherLinks}>
-                      <Link to='/light-sp/floor-lamps'>
-                        <img className="img-thumbnail" src="https://www.svetodom.ru/published/publicdata/SVETODOMRU/attachments/SC/products_pictures/LSP-0332tz.jpg" alt=""/>
-                        <h3 className={styles.otherLinksTitle}>
-                          Торшеры
-                        </h3>
-                      </Link>
-                    </div>
-                  </div>
+                  {product.types.map(type =>
+                    <TypeCard key={type.id} name={type.name} />
+                  )}
                 </div>
                 <hr/>
               </div>
@@ -168,6 +141,6 @@ const Index = ({products}) => {
       </div>
     </div>
   );
-};
+});
 
-export default Index;
+export default MainPage;

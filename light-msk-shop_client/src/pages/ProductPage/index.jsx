@@ -1,19 +1,16 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './ProductPage.module.scss';
+import {useParams} from "react-router-dom";
+import {fetchOneProduct} from "../../http/productAPI";
 
 const ProductPage = () => {
-  const product = {
-    id: 1,
-    name: 'Бра 1113/11 White',
-    price: 27856,
-    img: 'https://www.svetodom.ru/published/publicdata/SVETODOMRU/attachments/SC/products_pictures/A1292AP-1AB.jpg'
-  }
-  const description = [
-    {id:1, title: 'Диаметр см (D)', description: ''},
-    {id:2, title: 'Цоколь (E)', description: 'E14'},
-    {id:3, title: 'Место применения', description: 'коридор, гостиная, холл, кухня, спальня, ванная'},
-    {id:4, title: 'Тип крепления', description: 'потолочное'}
-  ]
+  const [product, setProduct] = useState({info: []});
+  const {id} = useParams();
+
+  useEffect(() => {
+    fetchOneProduct(id).then(data => setProduct(data));
+  }, [])
+
   return (
     <div>
       <div className={styles.wrapper}>
@@ -22,18 +19,18 @@ const ProductPage = () => {
             <div className="col-12 col-md-6">
               <div className={styles.leftSide}>
                 <img className='img-fluid'
-                     src={product.img}
+                     src={process.env.REACT_APP_API_URL + product.img}
                      alt=""/>
               </div>
             </div>
             <div className="col-12 col-md-6">
               <div className={styles.rightSide}>
                 <div className={styles.rightSideTitle}>
-                  {product.name}
+                  {product.name} {product.article}
                   <hr/>
                 </div>
                 <div className={styles.rightSidePrice}>
-                  <span className='price'>{(product.price).toLocaleString('ru')} руб.</span>
+                  <span className='price'>{product.price} руб.</span>
                   <div className={styles.rightSidePriceBtn}>
                     <input type="number" defaultValue={1} min={1}/>
                     <button>Добавить в корзину</button>
@@ -43,7 +40,7 @@ const ProductPage = () => {
                   <div className="descTable">
                     <table>
                       <tbody>
-                      {description.map(info =>
+                      {product.info.map(info =>
                         <tr>
                           <td>{info.title}</td>
                           <td>{info.description ? info.description : '-'}</td>

@@ -38,7 +38,7 @@ class AdministratorController {
     if (!comparePassword) {
       return next(ApiError.internal('Неверный пароль'));
     }
-    const token = generateJwt(admin.id, admin.email);
+    const token = generateJwt(admin.id, admin.email, admin.role);
     return res.json({token});
   }
 

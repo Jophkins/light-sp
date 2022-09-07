@@ -4,6 +4,7 @@ import CreateType from "../../components/modals/CreateType";
 import CreateProduct from "../../components/modals/CreateProduct";
 import {useNavigate} from "react-router-dom";
 import {Context} from "../../index";
+import Auth from "../Auth";
 
 const AdminPage = () => {
   const navigate = useNavigate();
@@ -12,11 +13,15 @@ const AdminPage = () => {
   const logOut = () => {
     user.setUser({});
     user.setIsAuth(false);
+    localStorage.clear();
     navigate('/light-sp/');
   }
 
+
   return (
+    user.isAuth ?
     <div className={styles.wrapper}>
+
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6">
@@ -30,6 +35,8 @@ const AdminPage = () => {
       </div>
 
     </div>
+      :
+      <Auth />
   );
 };
 

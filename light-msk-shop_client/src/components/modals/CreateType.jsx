@@ -1,6 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
+import {createType} from "../../http/productAPI";
 
 const CreateType = () => {
+
+  const [value, setValue] = useState('');
+
+  const addType = () => {
+    createType({name: value}).then(data =>
+      setValue('')
+    )}
+
   return (
     <div>
 
@@ -17,11 +26,11 @@ const CreateType = () => {
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div className="modal-body">
-              <input type="text" placeholder="введите название типа"/>
+              <input value={value} onChange={e => setValue(e.target.value)} type="text" placeholder="введите название типа"/>
             </div>
             <div className="modal-footer">
               <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" className="btn btn-outline-success">Добавить</button>
+              <button onClick={addType} className="btn btn-outline-success" data-bs-dismiss="modal">Добавить</button>
             </div>
           </div>
         </div>

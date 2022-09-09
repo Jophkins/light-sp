@@ -20,23 +20,36 @@ const AdminPage = () => {
 
   return (
     user.isAuth ?
-    <div className={styles.wrapper}>
+      <div className={styles.wrapper}>
 
-      <div className="container">
-        <div className="row">
-          <div className="col-12 col-md-6">
-            <CreateType/>
-            <CreateProduct/>
+        <div className="container">
+
+          <div className="row mt-5">
+            <div className="col-12 col-md-4 text-center">
+              <CreateType/>
+            </div>
+            <div className="col-12 col-md-4 text-center">
+              <CreateProduct/>
+            </div>
+            <div className="col-12 col-md-4 text-end">
+              <button className="btn btn-outline-primary" onClick={() => logOut()}> Выйти</button>
+            </div>
+            <hr className="mt-5"/>
           </div>
-          <div className="col-12 col-md-6">
-            <button className="btn btn-outline-primary" onClick={() => logOut()}> Выйти </button>
+
+          <div className="row">
+            <div className="ordersWrapper">
+              <div className="col-12">
+                orders
+              </div>
+            </div>
           </div>
+
         </div>
-      </div>
 
-    </div>
+      </div>
       :
-      <Auth />
+      <Auth/>
   );
 };
 

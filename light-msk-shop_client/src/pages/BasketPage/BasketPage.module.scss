@@ -3,7 +3,7 @@
 }
 
 .cartEmpty {
-  display: none;
+  display: block;
   margin: 16% 0;
 }
 
@@ -14,19 +14,6 @@
 
 .desc {
   font-size: 24px;
-}
-
-.product {
-  border: 1px dashed black;
-
-  input {
-    width: 40px;
-    margin-right: 10px;
-  }
-
-  .removeBtn {
-    cursor: pointer;
-  }
 }
 
 .total {

@@ -42,7 +42,7 @@ const SecondNavbar = () => {
           <ul className="navbar-nav me-5 ms-0">
             <li className="nav-item">
               <div className="nav-link">
-                <Link to='/light-sp/cart'>
+                <Link to='/light-sp/basket'>
                   <img width={25} src={bagDash} alt=""/>
                 </Link>
               </div>

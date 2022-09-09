@@ -3,11 +3,13 @@ import styles from './Card.module.scss';
 import { useNavigate } from "react-router-dom";
 
 const Card = ({id, title, price, imageUrl}) => {
+
   const navigate = useNavigate();
   return (
-    <div className="col-6 col-md-3 mt-4" onClick={() => navigate('/light-sp/product/' + id)}>
+    <div className="col-6 col-md-3 mt-4">
       <div className={styles.cardItem}>
         <img className="img-fluid"
+             onClick={() => navigate('/light-sp/product/' + id)}
              src={process.env.REACT_APP_API_URL + imageUrl}
              alt=""/>
         <h5>{title}</h5>

@@ -9,9 +9,9 @@ import Chandeliers from "../../pages/products/Chandeliers";
 import Sconce from "../../pages/products/Sconce";
 import Lamps from "../../pages/products/Lamps";
 import FloorLamps from "../../pages/products/FloorLamps";
-import CartPage from "../../pages/CartPage";
 import ProductPage from "../../pages/ProductPage";
 import AdminPage from "../../pages/AdminPage";
+import BasketPage from "../../pages/BasketPage";
 
 const AppRouter = () => {
 
@@ -32,7 +32,7 @@ const AppRouter = () => {
       <Route path='/light-sp/lamps' element={<Lamps/>} exact/>
       <Route path='/light-sp/floor-lamps' element={<FloorLamps/>} exact/>
 
-      <Route path='/light-sp/cart' element={<CartPage/>} exact/>
+      <Route path='/light-sp/basket' element={<BasketPage/>} exact/>
 
       <Route path='/light-sp/product/:id' element={<ProductPage/>} exact/>
 

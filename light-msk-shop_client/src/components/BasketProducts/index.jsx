@@ -2,14 +2,14 @@ import React, {useState} from 'react';
 import cross from "../../assets/img/cross.svg";
 import styles from "./BasketProducts.module.scss";
 
-const BasketProducts = ({id, name, price, img, removeProduct}) => {
-  const [numberVal, setNumberVal] = useState(1)
+const BasketProducts = ({id, name, price, img, count, removeProduct}) => {
+  const [numberVal, setNumberVal] = useState(count)
 
   const removeHandler = (id) => {
     removeProduct(id);
   }
   return (
-    <div className="productsWrapper mt-5">
+    <div className="productsWrapper">
 
       <div className={styles.product}>
         <div className="row align-items-center justify-content-between text-center">
@@ -19,11 +19,11 @@ const BasketProducts = ({id, name, price, img, removeProduct}) => {
                  alt=""/>
           </div>
           <div className="col-3">
-            <span className='productTitle'>{name}</span>
+            <span className={styles.productTitle}>{name}</span>
           </div>
           <div className="col-3 d-flex align-items-center justify-content-center">
             <input onChange={e => setNumberVal(e.target.value)} type="number" value={numberVal} min={1}/>
-            <span>{price * numberVal} руб.</span>
+            <span><b>{price * numberVal} руб.</b></span>
           </div>
           <div className="col-3">
             <div className={styles.removeBtn}>

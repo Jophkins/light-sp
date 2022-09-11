@@ -4,24 +4,30 @@ import React, {useContext, useEffect, useState} from 'react';
 import styles from './BasketPage.module.scss';
 import {Context} from "../../index";
 import BasketProducts from "../../components/BasketProducts";
+import basketProducts from "../../components/BasketProducts";
 
 const BasketPage = () => {
 
-  const {product, basketProduct} = useContext(Context);
-  const [basket, setBasket] = useState([]);
-  const [priceByProduct, setPriceByProduct] = useState([]);
-
-  // получаем список айдишников для покупки и фильтруем массив с продуктами по этим айдишникам получая массив продуктов в корзине
-  const orderIds = basketProduct.basketProducts.map(i => Number(i))
-  const productsToCheckout = orderIds.map((i) => {
-    return product.products.find((j) => {
-      return j.id === i
-    });
-  });
+  const {basketProduct} = useContext(Context);
+  const [basket, setBasket] = useState(
+    basketProduct.basketProducts
+  );
+  const [totalPrice, setTotalPrice] = useState(
+    basket.reduce((prev, curr) => {
+      return prev + curr.priceTotal
+    }, 0)
+  );
 
   useEffect(() => {
-    setBasket(productsToCheckout)
-  }, []);
+    setTotalPrice(
+      basket.reduce((prev, curr) => {
+        return prev + curr.priceTotal
+      }, 0)
+    )
+  }, [basket]);
+
+
+
 
   //считаем общую сумму
   // const totalPrice = basket.map(i => i.price).reduce((prev, cur) => {
@@ -30,6 +36,7 @@ const BasketPage = () => {
 
   const removeProduct = (id) => {
     let newBasket = basket.filter(i => i.id !== id);
+    basketProduct.setBasketProducts(newBasket);
     setBasket(newBasket);
   }
 
@@ -40,6 +47,7 @@ const BasketPage = () => {
                            name={i.name}
                            price={i.price}
                            img={process.env.REACT_APP_API_URL + i.img}
+                           count={i.count}
                            removeProduct={removeProduct}
             />
   });
@@ -70,7 +78,7 @@ const BasketPage = () => {
               <div className={`${styles.checkout} mt-5`}>
                 <div className="row">
                   <div className="col-12">
-                    <div onClick={() => console.log(priceByProduct)} className={styles.title}>
+                    <div className={`${styles.title} mb-5`}>
                       Оформление заказа
                     </div>
 
@@ -79,8 +87,8 @@ const BasketPage = () => {
                     <div className={`${styles.total} m-5`}>
                       <div className="row">
                         <div className="col-3 offset-9">
-                          <span className={styles.totalPrice}>{12} руб.</span>
-                          <button>Оформить заказ</button>
+                          <span className={styles.totalPrice}>{totalPrice} руб.</span>
+                          <button onClick={() => console.log(totalPrice)}>Оформить заказ</button>
                         </div>
                       </div>
                     </div>

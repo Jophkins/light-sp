@@ -9,15 +9,16 @@ const ProductPage = () => {
   const {basketProduct} = useContext(Context);
   const navigate = useNavigate();
   const [product, setProduct] = useState({info: []});
+  const [countNumber, setCountNumber] = useState(1);
   const {id} = useParams();
-
-  const addToBasket = () => {
-    basketProduct.setBasketProducts([...basketProduct.basketProducts, id])
-  }
 
   useEffect(() => {
     fetchOneProduct(id).then(data => setProduct(data));
   }, [])
+
+  const addToBasket = () => {
+    basketProduct.setBasketProducts([...basketProduct.basketProducts, {...product, count: Number(countNumber), priceTotal: Number(countNumber) * product.price}]);
+  }
 
   return (
     <div>
@@ -41,9 +42,8 @@ const ProductPage = () => {
                 <div className={styles.rightSidePrice}>
                   <span className='price'>{product.price} руб.</span>
                   <div className={styles.rightSidePriceBtn}>
-                    <input type="number" defaultValue={1} min={1}/>
-                    <button onClick={() => addToBasket()}>Добавить в корзину</button>
-                    <button>Купить в один клик</button>
+                    <input onChange={e => setCountNumber(e.target.value)} type="number" value={countNumber} min={1}/>
+                    <button onClick={() => addToBasket()}>Добавить в корзину / Оформить заказ</button>
                   </div>
                   <hr/>
                   <div className="descTable">

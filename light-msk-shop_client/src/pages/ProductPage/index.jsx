@@ -1,30 +1,63 @@
 import React, {useContext, useEffect, useState} from 'react';
 import styles from './ProductPage.module.scss';
 import {useParams} from "react-router-dom";
-import {fetchOneProduct} from "../../http/productAPI";
+import {deleteProduct, fetchOneProduct} from "../../http/productAPI";
 import { useNavigate } from "react-router-dom";
 import {Context} from "../../index";
 
 const ProductPage = () => {
-  const {basketProduct} = useContext(Context);
+  const {basketProduct, user} = useContext(Context);
   const navigate = useNavigate();
   const [product, setProduct] = useState({info: []});
   const [countNumber, setCountNumber] = useState(1);
+  const [loading, setLoading] = useState(true);
   const {id} = useParams();
 
   useEffect(() => {
-    fetchOneProduct(id).then(data => setProduct(data));
+    fetchOneProduct(id).then(data => {
+      return data ? setProduct(data) : navigate('/light-sp/')
+    }).catch(err => {
+      console.log('Произошла ошибка. Свяжитесь с технической поддержкой')
+    }).finally(() => {
+      setLoading(false)
+    });
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const addToBasket = () => {
     basketProduct.setBasketProducts([...basketProduct.basketProducts, {...product, count: Number(countNumber), priceTotal: Number(countNumber) * product.price}]);
   }
 
+  const removeProduct = (id) => {
+    deleteProduct(id).then(data => alert(` Продукт с идентификатором ${data} удален. Обновите страницу.`));
+    navigate(-1);
+  }
+
+  if (loading) {
+    return (
+      <div className="spinner-border" role="status">
+        <span className="visually-hidden">Loading...</span>
+      </div>
+    )
+  }
+
   return (
     <div>
       <div className={styles.wrapper}>
         <div className="container">
-          <button className="mb-2" onClick={() => navigate(-1)}>Вернуться назад</button>
+          <div className="row">
+            <div className="col-6">
+              <button className="mb-2" onClick={() => navigate(-1)}>Вернуться назад</button>
+            </div>
+            <div className="col-6 text-end">
+              {(user.isAuth) ?
+                <button className="mb-2" onClick={() => removeProduct(id)}>Удалить товар</button>
+                :
+                null
+              }
+            </div>
+          </div>
           <div className="row">
             <div className="col-12 col-md-6">
               <div className={styles.leftSide}>

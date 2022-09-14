@@ -87,7 +87,7 @@ const BasketPage = () => {
                     <div className={`${styles.total} m-5`}>
                       <div className="row">
                         <div className="col-3 offset-9">
-                          <span className={styles.totalPrice}>{totalPrice} руб.</span>
+                          <span className={styles.totalPrice}>Итого: {totalPrice} руб.</span>
                           <button onClick={() => console.log(totalPrice)}>Оформить заказ</button>
                         </div>
                       </div>

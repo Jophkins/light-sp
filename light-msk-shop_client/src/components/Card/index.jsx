@@ -8,7 +8,9 @@ const Card = ({id, title, price, imageUrl}) => {
   return (
     <div className="col-6 col-md-3 mt-4">
       <div className={styles.cardItem}>
-        <img className="img-fluid"
+        <img 
+             width='213'
+             height='213'
              onClick={() => navigate('/light-sp/product/' + id)}
              src={process.env.REACT_APP_API_URL + imageUrl}
              alt=""/>

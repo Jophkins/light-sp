@@ -1,5 +1,4 @@
 import {$authHost, $host} from "./index";
-import jwt_decode from "jwt-decode";
 
 export const createType = async (type) => {
   const {data} = await $authHost.post('api/type', type);
@@ -24,4 +23,9 @@ export const fetchProducts = async () => {
 export const fetchOneProduct = async (id) => {
   const {data} = await $host.get('api/product/' + id);
   return data;
+}
+
+export const deleteProduct = async (id) => {
+  const {data} = await $authHost.delete('api/product/' + id);
+  return data
 }

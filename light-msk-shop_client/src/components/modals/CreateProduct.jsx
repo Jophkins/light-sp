@@ -13,6 +13,8 @@ const CreateProduct = observer(() => {
 
   useEffect(() => {
     fetchTypes().then(data => product.setTypes(data))
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
 
@@ -98,7 +100,7 @@ const CreateProduct = observer(() => {
             </div>
             <div className="modal-footer">
               <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button onClick={addProduct} type="button" className="btn btn-outline-success">Добавить</button>
+              <button onClick={addProduct} type="button" className="btn btn-outline-success" data-bs-dismiss="modal">Добавить</button>
             </div>
           </div>
         </div>

@@ -5,10 +5,11 @@ import CreateProduct from "../../components/modals/CreateProduct";
 import {useNavigate} from "react-router-dom";
 import {Context} from "../../index";
 import Auth from "../Auth";
+import Accordion from "../../components/Accordion";
 
 const AdminPage = () => {
   const navigate = useNavigate();
-  const {user} = useContext(Context);
+  const {user, order} = useContext(Context);
 
   const logOut = () => {
     user.setUser({});
@@ -16,6 +17,9 @@ const AdminPage = () => {
     localStorage.clear();
     navigate('/light-sp/');
   }
+
+  console.log(order.orders)
+
 
 
   return (
@@ -39,9 +43,10 @@ const AdminPage = () => {
 
           <div className="row">
             <div className="ordersWrapper">
-              <div className="col-12">
-                orders
+              <div className="title mb-2">
+                Список заказов
               </div>
+              <Accordion />
             </div>
           </div>
 

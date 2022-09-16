@@ -30,7 +30,7 @@ const ProductPage = () => {
   }
 
   const removeProduct = (id) => {
-    deleteProduct(id).then(data => alert(` Продукт с идентификатором ${data} удален. Обновите страницу.`));
+    deleteProduct(id).then(data => alert(`Продукт удален. Обновите страницу.`));
     navigate(-1);
   }
 

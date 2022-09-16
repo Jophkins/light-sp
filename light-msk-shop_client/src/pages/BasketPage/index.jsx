@@ -4,7 +4,6 @@ import React, {useContext, useEffect, useState} from 'react';
 import styles from './BasketPage.module.scss';
 import {Context} from "../../index";
 import BasketProducts from "../../components/BasketProducts";
-import basketProducts from "../../components/BasketProducts";
 
 const BasketPage = () => {
 
@@ -88,7 +87,7 @@ const BasketPage = () => {
                       <div className="row">
                         <div className="col-3 offset-9">
                           <span className={styles.totalPrice}>Итого: {totalPrice} руб.</span>
-                          <button onClick={() => console.log(totalPrice)}>Оформить заказ</button>
+                          <button onClick={() => console.log(basket)}>Оформить заказ</button>
                         </div>
                       </div>
                     </div>

@@ -19,7 +19,7 @@ const Order = sequelize.define('order', {
 const OrderInfo = sequelize.define('order_info', {
   id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
   quantity: {type: DataTypes.INTEGER, defaultValue: 1},
-  name: {type: DataTypes.STRING, unique: true, allowNull: false},
+  name: {type: DataTypes.STRING, allowNull: false},
   price: {type: DataTypes.INTEGER, allowNull: false},
 });
 
@@ -51,8 +51,6 @@ OrderInfo.belongsTo(Order);
 Type.hasMany(Product);
 Product.belongsTo(Type);
 
-Product.hasOne(OrderInfo);
-OrderInfo.belongsTo(Product);
 
 Product.hasMany(ProductInfo, {as: 'info'});
 ProductInfo.belongsTo(Product);

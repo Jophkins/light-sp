@@ -12,14 +12,11 @@ const BasketPage = () => {
   const [basket, setBasket] = useState(
     basketProduct.basketProducts
   );
-  const [totalPrice, setTotalPrice] = useState(
-    basket.reduce((prev, curr) => {
-      return prev + curr.priceTotal
-    }, 0)
-  );
+  const [totalPrice, setTotalPrice] = useState(0);
 
-  const [name, setName] = useState('');
+  const [customerName, setCustomerName] = useState('');
   const [phone, setPhone] = useState('');
+  const [info, setInfo] = useState([]);
 
   useEffect(() => {
     setTotalPrice(
@@ -27,15 +24,17 @@ const BasketPage = () => {
         return prev + curr.priceTotal
       }, 0)
     )
+    setInfo(basket.map(i => ({quantity: i.count, name: i.name, price: i.price})));
   }, [basket]);
 
 
   const addOrder = () => {
-    createOrder({name: name, phone: phone, totalPrice: totalPrice}).then(data => {
-        setName('');
-        setPhone('');
-      }
-    )
+    const formData = new FormData();
+    formData.append('customerName', customerName);
+    formData.append('phone', `${phone}`);
+    formData.append('totalPrice', totalPrice);
+    formData.append('info', JSON.stringify(info));
+    createOrder(formData);
   }
 
   //считаем общую сумму
@@ -97,7 +96,7 @@ const BasketPage = () => {
                     <div className={`${styles.total} m-5`}>
                       <div className="row">
                         <div className="col-3 offset-3">
-                          <input onChange={(e) => setName(e.target.value)} value={name} type="text"
+                          <input onChange={(e) => setCustomerName(e.target.value)} value={customerName} type="text"
                                  placeholder="Ваше имя" required/>
                         </div>
                         <div className="col-3">

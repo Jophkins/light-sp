@@ -83,7 +83,7 @@ const ProductPage = () => {
                     <table>
                       <tbody>
                       {product.info.map(info =>
-                        <tr>
+                        <tr key={info.id}>
                           <td>{info.title}</td>
                           <td>{info.description ? info.description : '-'}</td>
                         </tr>

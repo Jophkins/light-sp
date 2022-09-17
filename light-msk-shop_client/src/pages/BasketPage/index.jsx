@@ -4,6 +4,7 @@ import React, {useContext, useEffect, useState} from 'react';
 import styles from './BasketPage.module.scss';
 import {Context} from "../../index";
 import BasketProducts from "../../components/BasketProducts";
+import {createOrder} from "../../http/orderAPI";
 
 const BasketPage = () => {
 
@@ -17,6 +18,9 @@ const BasketPage = () => {
     }, 0)
   );
 
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+
   useEffect(() => {
     setTotalPrice(
       basket.reduce((prev, curr) => {
@@ -26,7 +30,13 @@ const BasketPage = () => {
   }, [basket]);
 
 
-
+  const addOrder = () => {
+    createOrder({name: name, phone: phone, totalPrice: totalPrice}).then(data => {
+        setName('');
+        setPhone('');
+      }
+    )
+  }
 
   //считаем общую сумму
   // const totalPrice = basket.map(i => i.price).reduce((prev, cur) => {
@@ -48,7 +58,7 @@ const BasketPage = () => {
                            img={process.env.REACT_APP_API_URL + i.img}
                            count={i.count}
                            removeProduct={removeProduct}
-            />
+    />
   });
 
 
@@ -67,7 +77,8 @@ const BasketPage = () => {
                       Корзина пуста. Добавьте хотя бы один товар.
                     </div>
                     <div className={`${styles.desc} text-center`}>
-                      Вы не приобрели ни одного товара. Пожалуйста вернитесь на главную страницу или в тематический раздел и
+                      Вы не приобрели ни одного товара. Пожалуйста вернитесь на главную страницу или в тематический
+                      раздел и
                       добавьте что нибудь.
                     </div>
                   </div>
@@ -85,9 +96,17 @@ const BasketPage = () => {
 
                     <div className={`${styles.total} m-5`}>
                       <div className="row">
-                        <div className="col-3 offset-9">
+                        <div className="col-3 offset-3">
+                          <input onChange={(e) => setName(e.target.value)} value={name} type="text"
+                                 placeholder="Ваше имя" required/>
+                        </div>
+                        <div className="col-3">
+                          <input onChange={(e) => setPhone(e.target.value)} value={phone} type="text"
+                                 placeholder="Ваш номер телефона" required/>
+                        </div>
+                        <div className="col-3">
                           <span className={styles.totalPrice}>Итого: {totalPrice} руб.</span>
-                          <button onClick={() => console.log(basket)}>Оформить заказ</button>
+                          <button onClick={addOrder}>Оформить заказ</button>
                         </div>
                       </div>
                     </div>

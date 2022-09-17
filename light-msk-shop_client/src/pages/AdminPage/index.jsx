@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import styles from './Admin.module.scss';
 import CreateType from "../../components/modals/CreateType";
 import CreateProduct from "../../components/modals/CreateProduct";
@@ -6,6 +6,7 @@ import {useNavigate} from "react-router-dom";
 import {Context} from "../../index";
 import Auth from "../Auth";
 import Accordion from "../../components/Accordion";
+import {fetchOrders} from "../../http/orderAPI";
 
 const AdminPage = () => {
   const navigate = useNavigate();
@@ -18,7 +19,10 @@ const AdminPage = () => {
     navigate('/light-sp/');
   }
 
-  console.log(order.orders)
+  useEffect(() => {
+    fetchOrders().then(data => order.setOrders(data));
+  }, [])
+
 
 
 

@@ -6,7 +6,7 @@ const ApiError = require('../error/ApiError');
 class ProductController {
   async create(req, res, next) {
    try {
-     let {name, article, price, brandId, typeId, info} = req.body;
+     let {name, article, price, typeId, info} = req.body;
      const {img} = req.files;
      let fileName = uuid.v4() + ".jpeg";
      img.mv(path.resolve(__dirname, '..', 'static', fileName));
